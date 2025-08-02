@@ -1,1 +1,0 @@
-# Declare input vars (user names, policy names)
