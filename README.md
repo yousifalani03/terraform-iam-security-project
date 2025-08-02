@@ -79,6 +79,28 @@ Created four distinct IAM groups with carefully scoped permissions:
 - **💰 Finance (1 user):** Budget management + Cost Explorer + billing read-only
 - **📊 Analysts (3 users):** Read-only access to data sources and reporting tools
 
+#### Example: Developer Group Policy Implementation
+
+The Developers group demonstrates our layered security approach with both functional access and security enforcement:
+
+![Developer Group Policies](./images/Dev-Group-Proof.png)
+
+**Attached Policies:**
+- **`DeveloperAccessPolicy`** - Custom policy providing core development permissions
+- **`EnforceMFA`** - Security policy requiring multi-factor authentication for all actions
+
+**Policy Implementation Benefits:**
+- **Separation of Concerns:** Functional permissions separated from security requirements
+- **Scalable Security:** MFA enforcement applied consistently across all groups
+- **Custom Access Control:** Tailored permissions that match developer workflow needs
+- **AWS Console Integration:** Policies visible and manageable through AWS IAM interface
+
+**Developer-Specific Permissions Include:**
+- **Full EC2 Access:** Create, modify, and terminate development instances
+- **Complete S3 Access:** Deploy applications and manage development assets  
+- **Read-Only CloudWatch:** Monitor application performance and logs
+- **Restricted Database Access:** No direct RDS access to protect production dataRetryClaude does not have the ability to run the code it generates yet.Claude can make mistakes. Please double-check responses.
+
 ### 4. Individual User Account Management
 
 Eliminated shared credentials by creating individual accounts for all team members:
@@ -90,6 +112,7 @@ Eliminated shared credentials by creating individual accounts for all team membe
 - **Group-Based Assignment:** Users inherit permissions through group membership
 - **Scalable Structure:** Easy to add/remove users and modify permissions
 - **Audit Trail:** All actions traceable to specific individuals
+
 
 ## 🏗️ Terraform Infrastructure
 
