@@ -1,4 +1,4 @@
-# terraform-iam-security-project
+#Repo Description
 Securing AWS access for StartupCo using Terraform. IAM users, groups, MFA, and policies based on least-privilege principles.
 
 # IAM Security Project 🔐
@@ -15,7 +15,7 @@ A Terraform-based AWS IAM security implementation that transforms a vulnerable c
 
 ## 🎯 Project Overview
 
-This project demonstrates how to implement enterprise-grade AWS IAM security using Infrastructure as Code (IaC) principles. Starting from a vulnerable environment with shared credentials and overprivileged access, we built a secure, scalable IAM foundation for a fictional startup.
+This project demonstrates how to implement enterprise-grade AWS IAM security using Infrastructure as Code (IaC) principles. Starting from a vulnerable environment with shared credentials and overprivileged access, I built a secure, scalable IAM foundation for a fictional startup.
 
 ### Key Objectives
 - ✅ Eliminate shared credentials and implement individual user accounts
@@ -28,7 +28,7 @@ This project demonstrates how to implement enterprise-grade AWS IAM security usi
 
 The original AWS environment suffered from critical security vulnerabilities:
 
-![Security Issues Diagram](./images/security-issues-diagram.png)
+![Security Issues Diagram](./images/Old-Diagram.png)
 
 **Critical Security Flaws:**
 - **No Multi-Factor Authentication (MFA)** - Single point of failure for account access
@@ -41,9 +41,8 @@ The original AWS environment suffered from critical security vulnerabilities:
 
 ### 1. Infrastructure as Code Foundation
 
-Our Terraform configuration establishes the foundation for secure IAM management:
+My Terraform configuration establishes the foundation for secure IAM management:
 
-![Terraform Configuration](./images/terraform-code.png)
 
 **Key Configuration Elements:**
 - **Terraform Version Lock:** `>= 1.6.0` ensures consistent behavior
@@ -72,7 +71,7 @@ We implemented a comprehensive password policy that exceeds industry standards:
 
 Created four distinct IAM groups with carefully scoped permissions:
 
-![IAM Groups Overview](./images/iam-groups.png)
+![IAM Groups Overview](./images/Groups.png)
 
 #### Group Breakdown:
 - **👩‍💻 Developers (4 users):** Full EC2 + S3 access, read-only CloudWatch monitoring
@@ -84,10 +83,10 @@ Created four distinct IAM groups with carefully scoped permissions:
 
 Eliminated shared credentials by creating individual accounts for all team members:
 
-![IAM Users List](./images/iam-users.png)
+![IAM Users List](./images/Users.png)
 
 **User Management Features:**
-- **14 Individual Accounts:** Each team member has a unique identity
+- **10 Individual Accounts:** Each team member has a unique identity
 - **Group-Based Assignment:** Users inherit permissions through group membership
 - **Scalable Structure:** Easy to add/remove users and modify permissions
 - **Audit Trail:** All actions traceable to specific individuals
@@ -110,6 +109,43 @@ iam-security-project/
 - **IAM Users:** Individual team member accounts  
 - **IAM Policies:** Custom permission sets following least privilege
 - **Account Password Policy:** Organization-wide security requirements
+
+
+
+## 🎉 Security Improvements Achieved
+
+### Before vs. After Comparison
+
+| Security Aspect | Before | After |
+|----------------|--------|-------|
+| **Authentication** | Shared credentials | Individual accounts + strong passwords |
+| **Authorization** | Flat, excessive permissions | Role-based, least privilege access |
+| **Accountability** | No audit trail | Individual user tracking |
+| **Password Security** | No policy enforcement | Comprehensive password requirements |
+| **Infrastructure Management** | Manual, inconsistent | Automated, version-controlled |
+
+### Measurable Improvements
+- **🔐 100% elimination** of shared credentials
+- **📈 90-day** password rotation policy
+- **👥 4 distinct** permission levels based on job function  
+- **📊 14 individual** user accounts for complete audit trails
+- **🔄 Infrastructure as Code** for consistent, repeatable deployments
+
+### Compliance Benefits
+- **SOC 2 Type II:** Enhanced access controls and audit trails
+- **PCI DSS:** Strong authentication and authorization controls
+- **ISO 27001:** Documented security procedures and least privilege access
+- **AWS Well-Architected:** Security pillar best practices implementation
+
+## 🔮 Future Enhancements
+
+- **Multi-Factor Authentication (MFA):** Require MFA for all user accounts
+- **Cross-Account Roles:** Implement assume-role patterns for multi-account access
+- **Policy Validation:** Automated testing of IAM policies using IAM Access Analyzer
+- **Secrets Management:** Integration with AWS Secrets Manager for credential rotation
+- **Monitoring & Alerting:** CloudWatch alarms for suspicious IAM activities
+
+
 
 ## 🚀 Deployment Guide
 
@@ -152,39 +188,6 @@ iam-security-project/
 - [ ] Set up CloudTrail for comprehensive audit logging
 - [ ] Create automated compliance monitoring
 
-## 🎉 Security Improvements Achieved
-
-### Before vs. After Comparison
-
-| Security Aspect | Before | After |
-|----------------|--------|-------|
-| **Authentication** | Shared credentials | Individual accounts + strong passwords |
-| **Authorization** | Flat, excessive permissions | Role-based, least privilege access |
-| **Accountability** | No audit trail | Individual user tracking |
-| **Password Security** | No policy enforcement | Comprehensive password requirements |
-| **Infrastructure Management** | Manual, inconsistent | Automated, version-controlled |
-
-### Measurable Improvements
-- **🔐 100% elimination** of shared credentials
-- **📈 90-day** password rotation policy
-- **👥 4 distinct** permission levels based on job function  
-- **📊 14 individual** user accounts for complete audit trails
-- **🔄 Infrastructure as Code** for consistent, repeatable deployments
-
-### Compliance Benefits
-- **SOC 2 Type II:** Enhanced access controls and audit trails
-- **PCI DSS:** Strong authentication and authorization controls
-- **ISO 27001:** Documented security procedures and least privilege access
-- **AWS Well-Architected:** Security pillar best practices implementation
-
-## 🔮 Future Enhancements
-
-- **Multi-Factor Authentication (MFA):** Require MFA for all user accounts
-- **Cross-Account Roles:** Implement assume-role patterns for multi-account access
-- **Policy Validation:** Automated testing of IAM policies using IAM Access Analyzer
-- **Secrets Management:** Integration with AWS Secrets Manager for credential rotation
-- **Monitoring & Alerting:** CloudWatch alarms for suspicious IAM activities
-
 ## 📚 References
 
 - [AWS IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
@@ -193,6 +196,5 @@ iam-security-project/
 
 ---
 
-**Project Author:** [Your Name]  
-**Last Updated:** [Current Date]  
-**License:** MIT
+**Project Author:** Yousif Alani 
+**Last Updated:** July 28, 2025 
