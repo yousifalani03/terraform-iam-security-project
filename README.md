@@ -5,14 +5,6 @@ Securing AWS access for StartupCo using Terraform. IAM users, groups, MFA, and p
 
 A Terraform-based AWS IAM security implementation that transforms a vulnerable cloud environment into a secure, role-based access control system following the principle of least privilege.
 
-## 📋 Table of Contents
-- [Project Overview](#project-overview)
-- [Security Problems Addressed](#security-problems-addressed)
-- [Implementation Details](#implementation-details)
-- [Terraform Infrastructure](#terraform-infrastructure)
-- [Deployment Guide](#deployment-guide)
-- [Security Improvements Achieved](#security-improvements-achieved)
-
 ## 🎯 Project Overview
 
 This project demonstrates how to implement enterprise-grade AWS IAM security using Infrastructure as Code (IaC) principles. Starting from a vulnerable environment with shared credentials and overprivileged access, I built a secure, scalable IAM foundation for a fictional startup.
@@ -53,7 +45,7 @@ My Terraform configuration establishes the foundation for secure IAM management:
 
 We implemented a comprehensive password policy that exceeds industry standards:
 
-![Password Policy Configuration](./images/password-policy.png)
+![Password Policy Configuration](./images/Password-Policy.png)
 
 **Password Requirements:**
 - **Minimum Length:** 12 characters
@@ -81,12 +73,12 @@ Created four distinct IAM groups with carefully scoped permissions:
 
 #### Example: Developer Group Policy Implementation
 
-The Developers group demonstrates our layered security approach with both functional access and security enforcement:
+The Developers group demonstrates my layered security approach with both functional access and security enforcement:
 
 ![Developer Group Policies](./images/Dev-Group-Proof.png)
 
 **Attached Policies:**
-- **`DeveloperAccessPolicy`** - Custom policy providing core development permissions
+- **`DeveloperAccessPolicy`** - Custom policy providing EC2 and S3 access
 - **`EnforceMFA`** - Security policy requiring multi-factor authentication for all actions
 
 **Policy Implementation Benefits:**
@@ -219,5 +211,5 @@ iam-security-project/
 
 ---
 
-**Project Author:** Yousif Alani 
-**Last Updated:** July 28, 2025 
+**Project Author:** Yousif Alani  
+**Last Updated:** July 28, 2025
