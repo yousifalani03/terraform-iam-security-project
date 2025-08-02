@@ -1,10 +1,6 @@
-#Repo Description
-Securing AWS access for StartupCo using Terraform. IAM users, groups, MFA, and policies based on least-privilege principles.
-
 # IAM Security Project 🔐
 
-A Terraform-based AWS IAM security implementation that transforms a vulnerable cloud environment into a secure, role-based access control system following the principle of least privilege.
-
+A Terraform-based AWS IAM security implementation that transforms a vulnerable cloud environment into a secure, role-based access control system following the principle of least privilege. (Major code in main.tf file)
 ## 🎯 Project Overview
 
 This project demonstrates how to implement enterprise-grade AWS IAM security using Infrastructure as Code (IaC) principles. Starting from a vulnerable environment with shared credentials and overprivileged access, I built a secure, scalable IAM foundation for a fictional startup.
